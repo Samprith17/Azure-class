@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaf9ff;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.field {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.field-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.ball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  top: 85px;
+  left: 135px;
+  transition: all 0.4s ease-in-out;
+  z-index: 2;
+}
+
+.scoreboard p {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  animation: glow 2s infinite;
+  transition: transform 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #fff; }
+  50% { box-shadow: 0 0 20px #00ff00; }
+  100% { box-shadow: 0 0 5px #fff; }
+}

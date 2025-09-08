@@ -1,32 +1,62 @@
-// Greet user
-document.getElementById('greetBtn').onclick = function() {
-  const name = document.getElementById('nameInput').value;
-  if (name) {
-    document.getElementById('greeting').innerText = 'Hello, ' + name + '!';
-  } else {
-    alert('Please enter your name.');
+let runs = 0;
+let wickets = 0;
+
+function addRun() {
+  if (wickets < 10) {
+    runs++;
+    document.getElementById('runs').innerText = runs;
+    animateBall();
+    playSound('run-sound');
+
+    // Show dance animation at 50
+    if (runs === 50) {
+      document.getElementById('dance').classList.remove('hidden');
+    }
   }
-};
-
-// Change background color
-document.getElementById('colorBtn').onclick = function() {
-  document.body.style.backgroundColor = 'lightyellow';
-};
-
-// Print numbers 1 to 5
-const list = document.getElementById('numberList');
-for (let i = 1; i <= 5; i++) {
-  const li = document.createElement('li');
-  li.innerText = i;
-  list.appendChild(li);
 }
 
-// Show/hide secret message
-document.getElementById('toggleMsgBtn').onclick = function() {
-  const msg = document.getElementById('secretMsg');
-  if (msg.style.display === 'none') {
-    msg.style.display = 'block';
-  } else {
-    msg.style.display = 'none';
+function addWicket() {
+  if (wickets < 10) {
+    wickets++;
+    document.getElementById('wickets').innerText = wickets;
+    playSound('wicket-sound');
+
+    if (wickets === 10) {
+      document.getElementById('message').classList.remove('hidden');
+      document.getElementById('celebration').classList.remove('hidden');
+    }
+
+    animateBall();
   }
-};
+}
+
+function resetGame() {
+  runs = 0;
+  wickets = 0;
+  document.getElementById('runs').innerText = runs;
+  document.getElementById('wickets').innerText = wickets;
+  document.getElementById('message').classList.add('hidden');
+  document.getElementById('celebration').classList.add('hidden');
+  document.getElementById('dance').classList.add('hidden');
+}
+
+function animateBall() {
+  const ball = document.getElementById('ball');
+  const randX = Math.random() * 200;
+  const randY = Math.random() * 100;
+
+  ball.style.transition = 'none';
+  ball.style.left = '135px';
+  ball.style.top = '85px';
+
+  setTimeout(() => {
+    ball.style.transition = 'all 0.5s ease-out';
+    ball.style.left = `${randX}px`;
+    ball.style.top = `${randY}px`;
+  }, 50);
+}
+
+function playSound(id) {
+  const sound = document.getElementById(id);
+  if (sound) sound.play();
+}

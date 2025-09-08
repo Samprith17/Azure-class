@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mini JS Project</title>
+  <meta charset="UTF-8" />
+  <title>🏏 Cricket Scoreboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 
-<h1 id="greeting">Welcome!</h1>
+  <h1>🏏 Cricket Scoreboard</h1>
 
-<label>Your name: <input type="text" id="nameInput"></label>
-<button id="greetBtn">Greet Me</button>
+  <!-- Field Section -->
+  <div class="field">
+  <img src="https://cdn.pixabay.com/photo/2017/09/04/18/03/cricket-2719066_960_720.jpg" alt="Cricket Ground" class="field-img" />
+  <div id="ball" class="ball"></div>
+</div>
 
-<br><br>
 
-<button id="colorBtn">Change Background Color</button>
+  <!-- Score Display -->
+  <div class="scoreboard">
+    <p>Runs: <span id="runs">0</span></p>
+    <p>Wickets: <span id="wickets">0</span></p>
+  </div>
 
-<ul id="numberList"></ul>
+  <!-- Buttons -->
+  <div class="buttons">
+    <button onclick="addRun()">Add Run</button>
+    <button onclick="addWicket()">Add Wicket</button>
+    <button onclick="resetGame()">Reset Game</button>
+  </div>
 
-<br>
+  <!-- Game Over Message -->
+  <p id="message" class="hidden">🏁 Game Over!</p>
 
-<button id="toggleMsgBtn">Show/Hide Message</button>
-<p id="secretMsg" style="display:none;">You found the secret message!</p>
+  <!-- Game Over Animation -->
+  <lottie-player
+    id="celebration"
+    src="https://assets1.lottiefiles.com/packages/lf20_qp1q7mct.json"
+    background="transparent"
+    speed="1"
+    style="width: 200px; height: 200px; margin: 20px auto"
+    autoplay
+    loop
+    class="hidden">
+  </lottie-player>
 
-<script src="script.js"></script>
+  <!-- 50 Runs Dance Animation -->
+  <lottie-player
+    id="dance"
+    src="https://assets3.lottiefiles.com/packages/lf20_iwmd6pyr.json"
+    background="transparent"
+    speed="1"
+    style="width: 200px; height: 200px; margin: 20px auto"
+    autoplay
+    loop
+    class="hidden">
+  </lottie-player>
+
+  <!-- Sound Effects (optional) -->
+  <audio id="run-sound" src="run.mp3"></audio>
+  <audio id="wicket-sound" src="wicket.mp3"></audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
