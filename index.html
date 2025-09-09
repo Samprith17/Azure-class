@@ -1,65 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>🏏 Cricket Scoreboard</title>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body>
 
-  <h1>🏏 Cricket Scoreboard</h1>
+  <h2>Sign Up</h2>
 
-  <!-- Field Section -->
-  <div class="field">
-  <img src="https://cdn.pixabay.com/photo/2017/09/04/18/03/cricket-2719066_960_720.jpg" alt="Cricket Ground" class="field-img" />
-  <div id="ball" class="ball"></div>
-</div>
+  <form id="signupForm">
+    <label>Username:</label><br>
+    <input type="text" id="username" /><br><br>
 
+    <label>Email:</label><br>
+    <input type="text" id="email" /><br><br>
 
-  <!-- Score Display -->
-  <div class="scoreboard">
-    <p>Runs: <span id="runs">0</span></p>
-    <p>Wickets: <span id="wickets">0</span></p>
-  </div>
+    <label>Password:</label><br>
+    <input type="password" id="password" /><br><br>
 
-  <!-- Buttons -->
-  <div class="buttons">
-    <button onclick="addRun()">Add Run</button>
-    <button onclick="addWicket()">Add Wicket</button>
-    <button onclick="resetGame()">Reset Game</button>
-  </div>
+    <label>Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" /><br><br>
 
-  <!-- Game Over Message -->
-  <p id="message" class="hidden">🏁 Game Over!</p>
+    <button type="submit">Submit</button>
+  </form>
 
-  <!-- Game Over Animation -->
-  <lottie-player
-    id="celebration"
-    src="https://assets1.lottiefiles.com/packages/lf20_qp1q7mct.json"
-    background="transparent"
-    speed="1"
-    style="width: 200px; height: 200px; margin: 20px auto"
-    autoplay
-    loop
-    class="hidden">
-  </lottie-player>
-
-  <!-- 50 Runs Dance Animation -->
-  <lottie-player
-    id="dance"
-    src="https://assets3.lottiefiles.com/packages/lf20_iwmd6pyr.json"
-    background="transparent"
-    speed="1"
-    style="width: 200px; height: 200px; margin: 20px auto"
-    autoplay
-    loop
-    class="hidden">
-  </lottie-player>
-
-  <!-- Sound Effects (optional) -->
-  <audio id="run-sound" src="run.mp3"></audio>
-  <audio id="wicket-sound" src="wicket.mp3"></audio>
+  <p id="message"></p>
 
   <script src="script.js"></script>
 </body>
