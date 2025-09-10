@@ -2,32 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Form Validation</title>
-  <link rel="stylesheet" href="style.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMPRITH B V | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .section-title { @apply text-3xl font-bold mb-6 text-indigo-600 text-center; }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900">
 
-  <h2>Sign Up</h2>
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-indigo-600">SAMPRITH B V</h1>
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li><a href="#hero" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+        <li><a href="#education" class="hover:text-indigo-600">Education</a></li>
+        <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
+        <li><a href="#skills" class="hover:text-indigo-600">Skills</a></li>
+        <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <form id="signupForm">
-    <label>Username:</label><br>
-    <input type="text" id="username" /><br><br>
+  <!-- Hero Section -->
+  <section id="hero" class="text-center py-20 bg-gradient-to-r from-indigo-600 to-blue-500 text-white">
+    <img src="profile.jpg" alt="Profile" class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg">
+    <h2 class="text-4xl font-bold mt-4">SAMPRITH B V</h2>
+    <p class="text-lg mt-2">Microsoft</p>
+    <p class="italic mt-2">"Building practical AI solutions on Azure — bots, LLMs, vision & speech"</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <a href="#" class="px-5 py-2 bg-white text-indigo-600 rounded-lg shadow hover:bg-gray-100">Download Resume</a>
+      <a href="#contact" class="px-5 py-2 bg-indigo-700 rounded-lg shadow hover:bg-indigo-800">Contact Me</a>
+      <a href="https://github.com/yourusername" target="_blank" class="px-5 py-2 bg-gray-800 rounded-lg shadow hover:bg-black">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="px-5 py-2 bg-blue-700 rounded-lg shadow hover:bg-blue-800">LinkedIn</a>
+    </div>
+  </section>
 
-    <label>Email:</label><br>
-    <input type="text" id="email" /><br><br>
+  <!-- About Me -->
+  <section id="about" class="max-w-4xl mx-auto py-16 px-4">
+    <h2 class="section-title">About Me</h2>
+    <p class="text-center text-lg text-gray-700">
+      I build and deploy AI solutions on Azure. I work on conversational AI, computer vision, and generative models.
+      I create community content & run the Innovation Tech Community.
+    </p>
+  </section>
 
-    <label>Password:</label><br>
-    <input type="password" id="password" /><br><br>
+  <!-- Education -->
+  <section id="education" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="section-title">Education</h2>
+      <div class="bg-gray-100 p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">MCA</h3>
+        <p class="text-gray-600">Specialization: Software Development</p>
+      </div>
+    </div>
+  </section>
 
-    <label>Confirm Password:</label><br>
-    <input type="password" id="confirmPassword" /><br><br>
+  <!-- Certifications -->
+  <section id="certifications" class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="section-title">Certifications</h2>
+      <ul class="grid md:grid-cols-2 gap-4">
+        <li class="p-4 bg-white rounded-lg shadow">Data Science</li>
+        <li class="p-4 bg-white rounded-lg shadow">Java Object Oriented Programming</li>
+      </ul>
+    </div>
+  </section>
 
-    <button type="submit">Submit</button>
-  </form>
+  <!-- Projects -->
+  <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 bg-white rounded-xl shadow">
+        <h3 class="font-semibold text-xl">Tender Allocations Based on AWS Services</h3>
+        <p class="text-gray-600 mt-2">An AI-powered solution for tender allocations using AWS infrastructure.</p>
+      </div>
+    </div>
+  </section>
 
-  <p id="message"></p>
+  <!-- Open Source -->
+  <section id="opensource" class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="section-title">Open Source Contributions</h2>
+      <a href="https://github.com/innovation-tech-community/portal" target="_blank" class="text-indigo-600 underline">innovation-tech-community/portal</a>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- Skills -->
+  <section id="skills" class="max-w-6xl mx-auto py-16 px-4">
+    <h2 class="section-title">Skills</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="p-4 bg-white rounded-lg shadow">Azure AI Services</div>
+      <div class="p-4 bg-white rounded-lg shadow">Azure OpenAI</div>
+      <div class="p-4 bg-white rounded-lg shadow">Python</div>
+      <div class="p-4 bg-white rounded-lg shadow">LLMs & Fine-tuning</div>
+      <div class="p-4 bg-white rounded-lg shadow">Azure DevOps / Terraform</div>
+      <div class="p-4 bg-white rounded-lg shadow">Power BI</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto py-16 px-4">
+    <h2 class="section-title">Contact</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p><strong>Location:</strong> Karnataka, India</p>
+        <p><strong>Email:</strong> sbv30092001@gmail.com</p>
+        <p><strong>Phone:</strong> +91-90000XXXXX</p>
+        <div class="flex gap-4 mt-4">
+          <a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Download Resume</a>
+          <a href="tel:+9190000XXXXX" class="px-4 py-2 bg-green-600 text-white rounded-lg">Call Me</a>
+          <a href="mailto:sbv30092001@gmail.com" class="px-4 py-2 bg-blue-600 text-white rounded-lg">Email Me</a>
+        </div>
+      </div>
+      <form class="space-y-4 bg-white p-6 rounded-xl shadow">
+        <input type="text" placeholder="Name" class="w-full border rounded-lg p-2">
+        <input type="email" placeholder="Email" class="w-full border rounded-lg p-2">
+        <textarea placeholder="Message" rows="4" class="w-full border rounded-lg p-2"></textarea>
+        <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Social Handles -->
+  <section class="bg-gray-100 py-8">
+    <div class="max-w-4xl mx-auto flex justify-center gap-6">
+      <a href="https://github.com/yourusername" target="_blank" class="text-gray-700 hover:text-indigo-600">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-700 hover:text-indigo-600">LinkedIn</a>
+      <a href="https://twitter.com/yourhandle" target="_blank" class="text-gray-700 hover:text-indigo-600">Twitter</a>
+      <a href="https://your-personal-site.com" target="_blank" class="text-gray-700 hover:text-indigo-600">Website</a>
+      <a href="https://youtube.com/yourchannel" target="_blank" class="text-gray-700 hover:text-indigo-600">YouTube</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-gray-600">
+    Made with ♥ by <span class="text-indigo-600 font-semibold">SAMPRITH B V</span> — Microsoft AI MVP
+  </footer>
+
 </body>
 </html>
